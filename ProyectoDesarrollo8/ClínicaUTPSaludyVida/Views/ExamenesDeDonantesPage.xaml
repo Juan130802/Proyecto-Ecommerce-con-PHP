@@ -1,0 +1,130 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.ExamenesDeDonantesPage"
+             Title="Exámenes de Donantes"
+             BackgroundColor="#F3EFE0">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Label Text="Exámenes de Donantes"
+                   FontSize="28"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   TextColor="#087E8B"
+                   Margin="0,10,0,20" />
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}"
+                               Color="#087E8B"
+                               HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="#F3EFE0"
+                   BorderColor="#201E1F"
+                   CornerRadius="10"
+                   Padding="15"
+                   HasShadow="True">
+                <StackLayout Spacing="10">
+                    <Label Text="Buscar por Cédula:"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#201E1F" />
+                    <Entry Placeholder="Ingrese cédula"
+                           Text="{Binding CedulaBusqueda}"
+                           FontSize="16"
+                           BackgroundColor="White"
+                           TextColor="#201E1F"
+                           PlaceholderColor="#201E1F"/>
+                    <Button Text="Buscar Donante"
+                            Command="{Binding BuscarDonanteCommand}"
+                            FontSize="16"
+                            BackgroundColor="#087E8B"
+                            TextColor="White"
+                            CornerRadius="10" />
+                </StackLayout>
+            </Frame>
+
+            <Label Text="Información del Donante" 
+                   FontSize="22" 
+                   FontAttributes="Bold" 
+                   TextColor="#087E8B"
+                   Margin="0,20,0,10" />
+
+            <Frame BackgroundColor="White"
+                   BorderColor="#201E1F"
+                   CornerRadius="10"
+                   Padding="15"
+                   HasShadow="True">
+                <StackLayout Spacing="10">
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Nombre: " FontSize="16" FontAttributes="Bold" TextColor="#201E1F"/>
+                        <Label Text="{Binding Nombre}" FontSize="16" TextColor="#201E1F"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Cédula: " FontSize="16" FontAttributes="Bold" TextColor="#201E1F"/>
+                        <Label Text="{Binding Cedula}" FontSize="16" TextColor="#201E1F"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Tipo de Sangre: " FontSize="16" FontAttributes="Bold" TextColor="#201E1F"/>
+                        <Label Text="{Binding TipoSangre}" FontSize="16" TextColor="#201E1F"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Fecha del Examen:" FontSize="16" FontAttributes="Bold" TextColor="#201E1F"/>
+                        <Label Text="{Binding FechaDeExamen, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" TextColor="#201E1F"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Estado: " FontSize="16" FontAttributes="Bold" TextColor="#201E1F"/>
+                        <Label Text="{Binding Status}" FontSize="16" TextColor="#201E1F"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Fecha de Donación: " FontSize="16" FontAttributes="Bold" TextColor="#201E1F"/>
+                        <Label Text="{Binding FechaDonacion, StringFormat='{0:dd/MM/yyyy}'}" FontSize="16" TextColor="#201E1F"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+
+            <CollectionView ItemsSource="{Binding ResultadosExamen}"
+                            Margin="0,0,0,20">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10"
+                               Margin="5"
+                               BackgroundColor="#F3EFE0"
+                               BorderColor="#201E1F"
+                               CornerRadius="10"
+                               HasShadow="True">
+                            <Label Text="{Binding .}"
+                                   FontSize="16"
+                                   TextColor="#201E1F" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="0,20,0,0">
+                <Button Text="Sí"
+                        Command="{Binding AceptarDonacionCommand}"
+                        FontSize="16"
+                        BackgroundColor="#4CAF50"
+                        TextColor="White"
+                        CornerRadius="10"
+                        WidthRequest="100" />
+
+                <Button Text="No"
+                        Command="{Binding RechazarDonacionCommand}"
+                        FontSize="16"
+                        BackgroundColor="#F44336"
+                        TextColor="White"
+                        CornerRadius="10"
+                        WidthRequest="100" />
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

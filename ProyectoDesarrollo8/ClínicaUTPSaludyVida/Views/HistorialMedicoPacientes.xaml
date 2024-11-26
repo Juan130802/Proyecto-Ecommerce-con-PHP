@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewModels"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.HistorialMedicoPacientes"
+             Title="Historial Médico de Pacientes"
+             BackgroundColor="#F0F4F8">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Padding="10" Spacing="20">
+
+                <Label Text="Historial Médico"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#087E8B"
+                       FontFamily="Inter" />
+
+                <CollectionView ItemsSource="{Binding ListaHistoriales}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" Spacing="10" BackgroundColor="White"  Margin="0,5">
+                                <Label Text="Nombre:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding Nombre}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Cédula:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding Cedula}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Edad:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding Edad}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Teléfono:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding Telefono}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Temperatura Corporal:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding TemperaturaCorporal}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Frecuencia Cardíaca:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding FrecuenciaCardiaca}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Frecuencia Respiratoria:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding FrecuenciaRespiratoria}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Presión Arterial:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding PresionArterial}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Oxígeno en Sangre:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding Oxigeno}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Peso (kg):" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding Peso}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Altura (cm):" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding Altura}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Motivo de Consulta:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding MotivoConsulta}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Enfermedades Previas:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding EnfermedadesPrevias}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Medicamentos Actuales:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding MedicamentosActuales}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Alergias Conocidas:" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding AlergiasConocidas}" FontSize="18" TextColor="#201E1F"/>
+
+                                <Label Text="Nivel de Dolor (1-10):" FontAttributes="Bold" TextColor="#087E8B"/>
+                                <Label Text="{Binding NivelDolor}" FontSize="18" TextColor="#201E1F"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button Text="Inicio"
+         BackgroundColor="#087E8B"
+         TextColor="White"
+         FontFamily="Inter"
+         HeightRequest="50"
+         WidthRequest="150"
+         CornerRadius="10"
+         Command="{Binding IrInicioCommand}" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

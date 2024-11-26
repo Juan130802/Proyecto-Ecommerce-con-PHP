@@ -1,0 +1,106 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewsModel"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.Referencias"
+             Title="Referencias"
+             BackgroundColor="#F3EFE0">
+
+    <!-- Envolvemos todo el contenido en un ScrollView para agregar la barra de desplazamiento -->
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Text="Buscar Paciente por Cédula:" FontSize="Medium" HorizontalOptions="Center" TextColor="#F3EFE0" />
+            <Entry Text="{Binding Cedula}" Placeholder="Ingrese la cédula" HorizontalOptions="FillAndExpand" TextColor="#FFFFFF" PlaceholderColor="#FFFFFF" BackgroundColor="#201E1F" />
+            <Button Text="Buscar" Command="{Binding BuscarCommand}" CommandParameter="{Binding Cedula}" HorizontalOptions="Center" TextColor="#FFFFFF" BackgroundColor="#201E1F" />
+
+            <Button Text="Crear Paciente"
+                    HorizontalOptions="Center"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="#201E1F"
+                    Clicked="OnButtonClicked"/>
+
+            <Label Text="Resultados:" FontSize="Medium" Margin="0,20,0,0" TextColor="#F3EFE0" />
+
+            <ListView ItemsSource="{Binding ListaPacientes}" 
+                      SelectedItem="{Binding PacienteSeleccionado, Mode=TwoWay}"
+                      SeparatorVisibility="Default" BackgroundColor="#F3EFE0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="10" Margin="5" BorderColor="#087E8B" CornerRadius="10" BackgroundColor="#FFFFFF">
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Name}" FontSize="18" TextColor="#087E8B" />
+                                    <Label Text="{Binding Cedula}" FontSize="16" TextColor="#201E1F" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout x:Name="FormularioPaciente" IsVisible="False" Padding="10" Margin="0,10,0,0">
+                <Frame BackgroundColor="#ffffff" CornerRadius="8" Padding="8" HasShadow="False">
+                    <StackLayout Spacing="10">
+                        <Label Text="Formulario para Donante"
+                               FontSize="Large"
+                               FontAttributes="Bold"
+                               TextColor="#201E1F"
+                               HorizontalOptions="Center" />
+
+                        <Label Text="Nombre" FontSize="Medium" TextColor="#201E1F" />
+                        <Frame CornerRadius="5" BorderColor="#D3D3D3" Padding="5">
+                            <Entry Placeholder="Ingresa tu nombre" 
+                                   BackgroundColor="White" 
+                                   TextColor="#201E1F" 
+                                   Text="{Binding Name}" />
+                        </Frame>
+
+                        <Label Text="Cédula" FontSize="Medium" TextColor="#201E1F" />
+                        <Frame CornerRadius="5" BorderColor="#D3D3D3" Padding="5">
+                            <Entry Placeholder="Ingresa tu cédula" 
+                                   Keyboard="Numeric" 
+                                   BackgroundColor="White" 
+                                   TextColor="#201E1F" 
+                                   Text="{Binding Cedula}" />
+                        </Frame>
+
+                        <Button Text="Realizar Examen" 
+                                BackgroundColor="#087E8B"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                CornerRadius="8"
+                                Margin="0,15,0,0"
+                                Command="{Binding SaveCommand1}"
+                                Clicked="OnButtonClicked1"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout x:Name="FormularioReferencia" IsVisible="{Binding PacienteSeleccionado, Converter={StaticResource NullToVisibilityConverter}}" Padding="10" Margin="0,10,0,0">
+                <Frame BackgroundColor="#ffffff" CornerRadius="8" Padding="8" HasShadow="False">
+                    <StackLayout Spacing="10">
+                        <Label Text="Formulario de Referencia Médica" FontSize="Large" FontAttributes="Bold" TextColor="#201E1F" HorizontalOptions="Center" />
+
+                        <Label Text="Nombre" FontSize="Medium" TextColor="#201E1F" />
+                        <Entry Placeholder="Nombre del paciente" Text="{Binding Name}" TextColor="#201E1F" />
+
+                        <Label Text="Cédula" FontSize="Medium" TextColor="#201E1F" />
+                        <Entry Placeholder="Cédula" Text="{Binding Cedula}" TextColor="#201E1F" />
+
+                        <Label Text="Contacto" FontSize="Medium" TextColor="#201E1F" />
+                        <Entry Placeholder="Número de teléfono" Text="{Binding Contacto}" TextColor="#201E1F" />
+
+                        <Label Text="Motivo" FontSize="Medium" TextColor="#201E1F" />
+                        <Editor Placeholder="Motivo de la referencia" Text="{Binding Motivo}" TextColor="#201E1F" />
+
+                        <Label Text="Especialidad Médica" FontSize="Medium" TextColor="#201E1F" />
+                        <Entry Placeholder="Especialidad" Text="{Binding EspecialidadMedica}" TextColor="#201E1F" />
+
+                        <Button Text="Guardar y Generar PDF" BackgroundColor="#087E8B" TextColor="White" FontAttributes="Bold" Command="{Binding SaveCommand}" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

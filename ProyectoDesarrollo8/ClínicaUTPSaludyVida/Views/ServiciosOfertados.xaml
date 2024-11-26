@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.ServiciosOfertados"
+             Title="Servicios Ofertados"
+             BackgroundColor="#087e8b"
+              NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <!-- Encabezado estilizado -->
+            <Frame BackgroundColor="#201E1F"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <Label Text="Servicios Ofertados"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="White" />
+            </Frame>
+
+            <!-- Lista de servicios con estilo y optimización para móvil -->
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="consultas.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Consultas y evaluaciones médicas con previa cita."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="urgencias.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Consultas y evaluaciones de urgencias."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="especialidades.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Referencias a especialidades médicas."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="salud.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Certificado de buena salud."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="estudios.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Solicitudes de estudios de gabinete."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="medicamentos.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Administración gratuita de medicamentos básicos."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="curaciones.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Curaciones y corte de puntos."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="peso_talla.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Control de peso y talla."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="presion.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Control de presión arterial."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="inhaloterapias.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Inhaloterapias."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="medicamentos_inyectables.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Aplicación de medicamentos inyectables."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+           BorderColor="#E0E0E0"
+           CornerRadius="10"
+           Padding="15"
+           HasShadow="True">
+                <HorizontalStackLayout Spacing="10">
+                    <Image Source="glicemia.png"
+                   WidthRequest="50"
+                   HeightRequest="50"
+                   Aspect="AspectFill" />
+                    <Label Text="• Toma de glicemia capilar."
+                   FontSize="18"
+                   TextColor="#333333" />
+                </HorizontalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

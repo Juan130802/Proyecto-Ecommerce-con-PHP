@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewsModel"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.ConsultaGeneral"
+             Title="Consulta General"
+             BackgroundColor="#087E8B">
+
+    <VerticalStackLayout Padding="20">
+        <Label
+            Text="Buscar Paciente por Cédula:"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            TextColor="#F3EFE0" />
+
+        <Entry
+            Text="{Binding Cedula}"
+            Placeholder="Ingrese la cédula"
+            HorizontalOptions="FillAndExpand"
+            TextColor="#000000" 
+            PlaceholderColor="#FFFFFF"
+            BackgroundColor="#201E1F" />
+
+            <Button
+            Text="Buscar"
+            Command="{Binding BuscarCommand}"
+            CommandParameter="{Binding Cedula}"
+            HorizontalOptions="Center"
+            TextColor="#FFFFFF" 
+            BackgroundColor="#201E1F" />
+
+            <Label
+            Text="Resultados:"
+            FontSize="Medium"
+            Margin="0,20,0,0"
+            TextColor="#F3EFE0" />
+
+        <ListView
+    ItemsSource="{Binding ListaPacientes}"
+    SeparatorVisibility="Default"
+    BackgroundColor="#F3EFE0"
+    ItemTapped="OnPacienteTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="10" Margin="5" BorderColor="#087E8B" CornerRadius="10" BackgroundColor="#FFFFFF">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Name}" FontSize="18" TextColor="#087E8B" />
+                                <Label Text="{Binding Cedula}" FontSize="16" TextColor="#201E1F" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

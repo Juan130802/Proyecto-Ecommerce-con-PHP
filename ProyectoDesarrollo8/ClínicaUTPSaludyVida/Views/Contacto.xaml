@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.Contacto"
+             Title="Contacto"
+              NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <VerticalStackLayout Padding="5,0" Spacing="5" BackgroundColor="#1FBFAF" >
+
+            <VerticalStackLayout Padding="30,0" Spacing="25" BackgroundColor="WhiteSmoke">
+
+                <Image Source="logo.png" HeightRequest="185" Aspect="AspectFit" />
+
+                <Label Text="Contacto"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   />
+
+                <VerticalStackLayout Padding="30,0" Spacing="10">
+                    <Label Text="Dirección: "
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    TextColor="Black"
+                    LineBreakMode="WordWrap"
+                    HorizontalOptions="Start" />
+                    <Label Text="Universidad Tecnológica de Panamá, Avenida Ricardo J. Alfaro, Campus Metropolitano Dr. Víctor Levi Sasso, Edificio Administrativo."
+                       FontSize="16"
+                       TextColor="Black"
+                       LineBreakMode="WordWrap"
+                       HorizontalOptions="Start" />
+
+                    <Label Text="Correo Electrónico:"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    TextColor="Black"
+                    LineBreakMode="WordWrap"
+                    HorizontalOptions="Start" />
+                    <Label Text="clinica.universitaria@utp.ac.pa"
+                       FontSize="16"
+                       TextColor="Black"
+                       LineBreakMode="WordWrap"
+                       HorizontalOptions="Start" />
+
+
+                    <Label Text="Horario de Atención:"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        TextColor="Black"
+                        LineBreakMode="WordWrap"
+                        HorizontalOptions="Start" />
+                    <Label Text="Lunes a viernes 8:00 a. m. a 4:00 p. m."
+                       FontSize="16"
+                       TextColor="Black"
+                       LineBreakMode="WordWrap"
+                       HorizontalOptions="Start" />
+
+
+                    <Label Text="Teléfono:"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        TextColor="Black"
+                        LineBreakMode="WordWrap"
+                        HorizontalOptions="Start" />
+                    <Label Text="(507) 560-3205/3169"
+                       FontSize="16"
+                       TextColor="Black"
+                       LineBreakMode="WordWrap"
+                       HorizontalOptions="Start" />
+
+
+                </VerticalStackLayout>
+                <Image Source="image4.png" HeightRequest="185" Aspect="AspectFit" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Padding="30,0" Spacing="10" BackgroundColor="WhiteSmoke">
+                <Label Text="© 2024 Clínica Universitaria"
+           FontSize="14"
+           TextColor="Black"
+           HorizontalOptions="Center" />
+
+                <Label Text="Todos los derechos reservados."
+           FontSize="14"
+           TextColor="Black"
+           HorizontalOptions="Center" />
+
+                <Label Text="Para consultas, por favor contáctenos a: clinica.universitaria@utp.ac.pa"
+           FontSize="14"
+           TextColor="Black"
+           HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

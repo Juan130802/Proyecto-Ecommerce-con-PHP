@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.Inicio"
+             Title="Inicio"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *, Auto" Padding="0" BackgroundColor="#F5F5DC">
+
+        <BoxView Grid.Row="0" HeightRequest="68" BackgroundColor="#087E8B"/>
+        <BoxView Grid.Row="0" HeightRequest="28" BackgroundColor="#201E1F"/>
+
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Padding="0,-150,0,0">
+            <Image Source="logo.png" HeightRequest="190" HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Spacing="15" Padding="0,350,0,0" VerticalOptions="Start">
+
+            <Button Text="Doctor"
+                    BackgroundColor="#087E8B"
+                    TextColor="White"
+                    FontFamily="Inter"
+                    HeightRequest="50"
+                    WidthRequest="335"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    Clicked="OnLoginButtonClicked"/>
+
+            <Button Text="Paciente"
+                    BackgroundColor="#087E8B"
+                    TextColor="White"
+                    FontFamily="Inter"
+                    HeightRequest="50"
+                    WidthRequest="335"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    Clicked="OnLoginButtonClicked1"/>
+
+            <Button Text="Registrar Enfermera"
+                    BackgroundColor="#087E8B"
+                    TextColor="White"
+                    FontFamily="Inter"
+                    HeightRequest="50"
+                    WidthRequest="335"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    Clicked="OnRegisterNurseButtonClicked"/>
+
+            <Button Text="Registrar Laboratorista"
+                    BackgroundColor="#087E8B"
+                    TextColor="White"
+                    FontFamily="Inter"
+                    HeightRequest="50"
+                    WidthRequest="335"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    Clicked="OnRegisterLabButtonClicked1"/>
+        </VerticalStackLayout>
+
+        <BoxView Grid.Row="2" HeightRequest="68" BackgroundColor="#201E1F"/>
+        <BoxView Grid.Row="2" HeightRequest="28" BackgroundColor="#087E8B"/>
+
+    </Grid>
+</ContentPage>

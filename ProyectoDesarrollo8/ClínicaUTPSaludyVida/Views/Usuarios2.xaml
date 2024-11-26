@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.Usuarios2"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15" BackgroundColor="#F5F5DC">
+
+            <Frame BackgroundColor="#087E8B" CornerRadius="10" Padding="10">
+                <Label Text="Registro de Citas"
+                       FontSize="24"
+                       HorizontalOptions="Center"
+                       TextColor="White"
+                       FontFamily="Inter"/>
+            </Frame>
+
+            <Border Stroke="Black"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10"
+                    WidthRequest="335"
+                    HeightRequest="50"
+                    HorizontalOptions="Center">
+                <Entry Placeholder="Nombre Completo"
+                       x:Name="NameEntryField"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       TextColor="Black"
+                       FontFamily="Inter"
+                       FontSize="16"
+                       HorizontalOptions="FillAndExpand"/>
+            </Border>
+
+            <Border Stroke="Black"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10"
+                    WidthRequest="335"
+                    HeightRequest="50"
+                    HorizontalOptions="Center">
+                <Entry Placeholder="Teléfono"
+                       x:Name="TefelonoEntryField"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       TextColor="Black"
+                       Keyboard="Telephone"
+                       FontFamily="Inter"
+                       FontSize="16"
+                       HorizontalOptions="FillAndExpand"/>
+            </Border>
+
+            <Border Stroke="Black"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10"
+                    WidthRequest="335"
+                    HeightRequest="50"
+                    HorizontalOptions="Center">
+                <Picker Title="Tipo de Consulta"
+                        x:Name="TipoConsultaEntryField"
+                        TitleColor="Black"
+                        TextColor="Black"
+                        FontFamily="Inter"
+                        FontSize="16"
+                        HorizontalOptions="FillAndExpand">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Consulta General</x:String>
+                            <x:String>Urgencias</x:String>
+                            <x:String>Especialidades</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Border>
+
+            <Border Stroke="Black"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10"
+                    WidthRequest="335"
+                    HeightRequest="50"
+                    HorizontalOptions="Center">
+                <Entry Placeholder="Motivo"
+                       x:Name="MotivoEntryField"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       TextColor="Black"
+                       FontFamily="Inter"
+                       FontSize="16"
+                       HorizontalOptions="FillAndExpand"/>
+            </Border>
+
+            <Border Stroke="Black"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10"
+                    WidthRequest="335"
+                    HeightRequest="50"
+                    HorizontalOptions="Center">
+                <DatePicker x:Name="FechaEntryField"
+                            TextColor="Black"
+                            FontFamily="Inter"
+                            FontSize="16"
+                            HorizontalOptions="FillAndExpand"/>
+            </Border>
+
+            <Border Stroke="Black"
+                    StrokeThickness="2"
+                    StrokeShape="RoundRectangle 10"
+                    WidthRequest="335"
+                    HeightRequest="50"
+                    HorizontalOptions="Center">
+                <TimePicker x:Name="HoraEntryField"
+                            TextColor="Black"
+                            FontFamily="Inter"
+                            FontSize="16"
+                            HorizontalOptions="FillAndExpand"/>
+            </Border>
+
+            <HorizontalStackLayout Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Text="Agendar Cita"
+                        BackgroundColor="#087E8B"
+                        TextColor="White"
+                        FontFamily="Inter"
+                        HeightRequest="50"
+                        WidthRequest="150"
+                        CornerRadius="10"
+                        Clicked="SaveButton_Clicked"/>
+            </HorizontalStackLayout>
+
+            <!--
+<ListView x:Name="listView"
+          BackgroundColor="#087E8B"
+          HasUnevenRows="True"
+          ItemTapped="listView_ItemTapped">
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <VerticalStackLayout Padding="10">
+                    <Label Text="{Binding name}"
+                           FontSize="18"
+                           FontFamily="Inter"/>
+                    <Label Text="{Binding edad}"
+                           FontSize="16"
+                           FontFamily="Inter"/>
+                    <Label Text="{Binding cedula}"
+                           FontSize="16"
+                           FontFamily="Inter"/>
+                    <Label Text="{Binding telefono}"
+                           FontSize="16"
+                           FontFamily="Inter"/>
+                    <Label Text="{Binding tipo_consulta}"
+                           FontSize="16"
+                           FontFamily="Inter"/>
+                    <Label Text="{Binding motivo}"
+                           FontSize="16"
+                           FontFamily="Inter"/>
+
+                    <Label Text="{Binding FechaHoraFormateada}"
+                           FontSize="16"
+                           FontFamily="Inter"/>
+                </VerticalStackLayout>
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
+-->
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

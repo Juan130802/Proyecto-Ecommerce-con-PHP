@@ -1,0 +1,239 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Clínica_UTP_Salud_y_Vida
+build_property.ProjectDir = C:\Users\HP\source\repos\ClínicaUTPSaludyVida\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Admin/Views/AdminProcedimientosPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Admin.Views.AdminProcedimientosPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Admin\Views\AdminProcedimientosPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Admin\Views\AdminProcedimientosPage.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Admin/Views/Doctores.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Admin.Views.Doctores.xaml
+build_metadata.AdditionalFiles.TargetPath = Admin\Views\Doctores.xaml
+build_metadata.AdditionalFiles.RelativePath = Admin\Views\Doctores.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Admin/Views/Medicamentos.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Admin.Views.Medicamentos.xaml
+build_metadata.AdditionalFiles.TargetPath = Admin\Views\Medicamentos.xaml
+build_metadata.AdditionalFiles.RelativePath = Admin\Views\Medicamentos.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Admin/Views/Pacientes1.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Admin.Views.Pacientes1.xaml
+build_metadata.AdditionalFiles.TargetPath = Admin\Views\Pacientes1.xaml
+build_metadata.AdditionalFiles.RelativePath = Admin\Views\Pacientes1.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Admin/Views/PersonalMedico.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Admin.Views.PersonalMedico.xaml
+build_metadata.AdditionalFiles.TargetPath = Admin\Views\PersonalMedico.xaml
+build_metadata.AdditionalFiles.RelativePath = Admin\Views\PersonalMedico.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/Bienvenida.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.Bienvenida.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Bienvenida.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Bienvenida.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/CalendarioDeCitas.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.CalendarioDeCitas.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CalendarioDeCitas.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CalendarioDeCitas.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/CertificadoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.CertificadoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CertificadoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CertificadoPage.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/CitasAgendadasDoctor.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.CitasAgendadasDoctor.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CitasAgendadasDoctor.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CitasAgendadasDoctor.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/CitasAgendadasUsuario.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.CitasAgendadasUsuario.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CitasAgendadasUsuario.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CitasAgendadasUsuario.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/ConsultaGeneral.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.ConsultaGeneral.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ConsultaGeneral.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ConsultaGeneral.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/ConsultaUrgencias.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.ConsultaUrgencias.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ConsultaUrgencias.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ConsultaUrgencias.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/Contacto.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.Contacto.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Contacto.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Contacto.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/Doctor.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.Doctor.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Doctor.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Doctor.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/DonadoresDeSangre.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.DonadoresDeSangre.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DonadoresDeSangre.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DonadoresDeSangre.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/ExamenesDeDonantesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.ExamenesDeDonantesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ExamenesDeDonantesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ExamenesDeDonantesPage.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/FormularioHistorialPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.FormularioHistorialPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\FormularioHistorialPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\FormularioHistorialPage.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/HistorialMedicoPacientes.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.HistorialMedicoPacientes.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\HistorialMedicoPacientes.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\HistorialMedicoPacientes.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/Inicio.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.Inicio.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Inicio.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Inicio.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/LaboratoristaRegister.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.LaboratoristaRegister.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LaboratoristaRegister.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LaboratoristaRegister.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/Login1.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.Login1.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Login1.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Login1.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/MainPagemenu.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.MainPagemenu.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MainPagemenu.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MainPagemenu.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/MedicamentosTratamientos.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.MedicamentosTratamientos.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MedicamentosTratamientos.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MedicamentosTratamientos.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/NurseRegister.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.NurseRegister.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\NurseRegister.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\NurseRegister.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/Pacientes.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.Pacientes.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Pacientes.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Pacientes.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/ProcedimientoMedicoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.ProcedimientoMedicoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProcedimientoMedicoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProcedimientoMedicoPage.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/RecetaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.RecetaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RecetaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RecetaPage.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/RecetasAgendadas.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.RecetasAgendadas.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RecetasAgendadas.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RecetasAgendadas.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/Referencias.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.Referencias.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Referencias.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Referencias.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/ReferenciasListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.ReferenciasListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ReferenciasListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ReferenciasListPage.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/ServiciosOfertados.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.ServiciosOfertados.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ServiciosOfertados.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ServiciosOfertados.xaml
+
+[C:/Users/HP/source/repos/ClínicaUTPSaludyVida/Views/Usuarios2.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Clínica_UTP_Salud_y_Vida.Views.Usuarios2.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Usuarios2.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Usuarios2.xaml

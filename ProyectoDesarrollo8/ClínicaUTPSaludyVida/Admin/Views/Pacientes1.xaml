@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewsModel"
+             x:Class="Clínica_UTP_Salud_y_Vida.Admin.Views.Pacientes1"
+             Title="Pacientes"
+             BackgroundColor="#F0F4F8">
+    <ContentPage.BindingContext>
+        <vm:Pacientes1ViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Padding="10" Spacing="20">
+                <Label Text="Lista de Pacientes"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#087E8B"
+                       FontFamily="Inter" />
+
+                <CollectionView x:Name="collectionView"
+                                ItemsSource="{Binding ListaPacientes}"
+                                SelectionMode="None">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="20" HorizontalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="5" BorderColor="#087E8B" CornerRadius="10"
+                                   BackgroundColor="#F3EFE0">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="Nombre:" FontSize="14" FontAttributes="Bold" TextColor="#087E8B"/>
+                                    <Label Text="{Binding Name}" FontSize="18" TextColor="#201E1F" FontFamily="Inter"/>
+                                    <Label Text="Cedula:" FontSize="14" FontAttributes="Bold" TextColor="#087E8B"/>
+                                    <Label Text="{Binding Cedula}" FontSize="18" TextColor="#201E1F" FontFamily="Inter"/>
+                                    <Label Text="Email:" FontSize="14" FontAttributes="Bold" TextColor="#087E8B"/>
+                                    <Label Text="{Binding Email}" FontSize="16" FontFamily="Inter" TextColor="#201E1F"/>
+                                    <Label Text="Contraseña:" FontSize="14" FontAttributes="Bold" TextColor="#087E8B"/>
+                                    <Label Text="{Binding Password}" FontSize="16" FontFamily="Inter" TextColor="#201E1F" IsVisible="{Binding IsPasswordVisible}"/>
+                                    <Label Text="Citas:" FontSize="14" FontAttributes="Bold" TextColor="#087E8B"/>
+                                    <Button Text="Ver Citas"
+                                            BackgroundColor="#087E8B"
+                                            TextColor="White"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:Pacientes1ViewModel}}, Path=VerCitasCommand}"
+                                            CommandParameter="{Binding}" />
+                                </VerticalStackLayout>
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:Pacientes1ViewModel}}, Path=PacienteTappedCommand}"
+                                        CommandParameter="{Binding}" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

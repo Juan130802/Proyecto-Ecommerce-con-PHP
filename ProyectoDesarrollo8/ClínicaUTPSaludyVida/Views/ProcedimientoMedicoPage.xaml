@@ -1,0 +1,79 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Clínica_UTP_Salud_y_Vida.Views"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.ProcedimientoMedicoPage"
+             BackgroundColor="#F3EFE0">
+
+    <StackLayout Padding="20" Spacing="15">
+
+        <Label Text="Buscar paciente por cédula" FontSize="Large" 
+               TextColor="#201E1F" HorizontalOptions="Center" />
+
+        <Frame BackgroundColor="White" CornerRadius="10" Padding="10" HasShadow="True">
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Entry Text="{Binding CedulaBusqueda}" 
+                       Placeholder="Ingrese la cédula" 
+                       HorizontalOptions="FillAndExpand" TextColor="#201E1F" />
+                <Button Text="Buscar" Command="{Binding BuscarPacienteCommand}" 
+                        BackgroundColor="#087E8B" TextColor="White" 
+                        WidthRequest="100" />
+            </StackLayout>
+        </Frame>
+
+        <ListView ItemsSource="{Binding Pacientes}" 
+          SelectedItem="{Binding PacienteSeleccionado}" 
+          BackgroundColor="White" 
+          HasUnevenRows="True"
+          SeparatorColor="#087E8B">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="5" Margin="5" BackgroundColor="#F3EFE0" CornerRadius="5" HasShadow="True">
+                            <StackLayout>
+                                <Label Text="{Binding Name}" FontSize="Small" 
+                                    TextColor="#201E1F" HorizontalOptions="Start" />
+                                    <Label Text="{Binding Cedula}" FontSize="Micro" 
+                                        TextColor="#201E1F" HorizontalOptions="Start" />
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <Label Text="Información del Paciente Seleccionado" FontSize="Large" 
+               TextColor="#201E1F" HorizontalOptions="Center"/>
+
+        <Frame BackgroundColor="White" CornerRadius="10" Padding="10">
+            <StackLayout>
+                <Entry Text="{Binding NombrePaciente}" 
+                       Placeholder="Nombre" 
+                       IsReadOnly="True" TextColor="#201E1F" />
+                <Entry Text="{Binding CedulaPaciente}" 
+                       Placeholder="Cédula" 
+                       IsReadOnly="True" TextColor="#201E1F"/>
+            </StackLayout>
+        </Frame>
+
+        <Label Text="Seleccione el procedimiento" FontSize="Medium" 
+               TextColor="Black"/>
+
+        <Frame BackgroundColor="White" CornerRadius="10" Padding="10">
+            <Picker ItemsSource="{Binding Procedimientos}" 
+                    SelectedItem="{Binding ProcedimientoSeleccionado}" TextColor="#201E1F"/>
+        </Frame>
+
+        <Label Text="Observaciones" FontSize="Medium" 
+               TextColor="Black"/>
+
+        <Frame BackgroundColor="White" CornerRadius="10" Padding="10">
+            <Editor Text="{Binding Observaciones}" 
+                    Placeholder="Ingrese observaciones del procedimiento" TextColor="#201E1F"/>
+        </Frame>
+
+        <Button Text="Guardar Procedimiento" Command="{Binding GuardarProcedimientoCommand}" 
+                BackgroundColor="#087E8B" TextColor="White" 
+                VerticalOptions="EndAndExpand" />
+    </StackLayout>
+</ContentPage>

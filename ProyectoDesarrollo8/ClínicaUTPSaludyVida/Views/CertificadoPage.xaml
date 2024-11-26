@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewsModel"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.CertificadoPage"
+             Title="CertificadoPage">
+
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="PlaceholderColor" Value="Gray" />
+            <Setter Property="BackgroundColor" Value="#FFFFFF" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Detalles del Certificado"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#087E8B" />
+
+
+            <Frame BackgroundColor="#E8EAF6" Padding="20" CornerRadius="10" HasShadow="True">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+           RowSpacing="20" ColumnSpacing="20">
+
+                    <Entry Grid.Row="0" Grid.Column="0" Placeholder="Nombre Completo"
+                           Text="{Binding Nombre}" />
+                    <Entry Grid.Row="0" Grid.Column="1" Placeholder="Cedula"
+                           Text="{Binding Cedula}" />
+                </Grid>
+            </Frame>
+            <Button Text="Guardar Certificado"
+        Command="{Binding GuardarYDescargarCommand}"
+        BackgroundColor="#087E8B"
+        TextColor="White"
+        FontFamily="Inter"
+        HeightRequest="50"
+        WidthRequest="150"
+        CornerRadius="10"
+        HorizontalOptions="FillAndExpand" />
+
+            <Button Text="Inicio"
+                    BackgroundColor="#087E8B"
+                    TextColor="White"
+                    FontFamily="Inter"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    CornerRadius="10"
+                    Command="{Binding IrInicioCommand}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

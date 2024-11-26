@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewsModel"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.CitasAgendadasDoctor"
+             Title="Citas Agendadas"
+             BackgroundColor="#F0F4F8">
+    <ContentPage.BindingContext>
+        <vm:CitasAgendadasDoctorViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Padding="10" Spacing="20">
+                <Label Text="Citas Agendadas"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#087E8B"
+                       FontFamily="Inter" />
+
+                <Label Text="{Binding CitasDoctor.Count, StringFormat='Citas encontradas: {0}'}" FontSize="Small" HorizontalOptions="Center" />
+
+                <CollectionView ItemsSource="{Binding CitasDoctor}"
+                                SelectionMode="Single"
+                                SelectedItem="{Binding SelectedCita}">
+
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="20" HorizontalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="5" BorderColor="#087E8B" CornerRadius="10"
+                                   BackgroundColor="#F3EFE0">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="Nombre:" FontSize="14" FontAttributes="Bold" TextColor="#087E8B"/>
+                                    <Label Text="{Binding name}" FontSize="18" FontAttributes="Bold" TextColor="#201E1F" FontFamily="Inter"/>
+
+                                    <Label Text="Motivo:" FontSize="14" FontAttributes="Bold" TextColor="#087E8B"/>
+                                    <Label Text="{Binding motivo}" FontSize="16" FontFamily="Inter" TextColor="#201E1F"/>
+
+                                    <Label Text="Tipo de Consulta:" FontSize="14" FontAttributes="Bold" TextColor="#087E8B"/>
+                                    <Label Text="{Binding tipo_consulta}" FontSize="16" FontFamily="Inter" TextColor="#201E1F"/>
+
+                                    <Label Text="Fecha y Hora de la Cita:" FontSize="14" FontAttributes="Bold" TextColor="#087E8B"/>
+                                    <Label Text="{Binding FechaHoraFormateada}" FontSize="16" FontFamily="Inter" TextColor="#201E1F"/>
+
+                                    <Button
+                       Text="Dar Recetas"
+    BackgroundColor="#087E8B"
+    TextColor="White"
+   Clicked="NavegarAReceta"
+    />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button Text="Inicio"
+                        BackgroundColor="#087E8B"
+                        TextColor="White"
+                        FontFamily="Inter"
+                        HeightRequest="50"
+                        WidthRequest="150"
+                        CornerRadius="10"
+                        Command="{Binding IrInicioCommand}" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

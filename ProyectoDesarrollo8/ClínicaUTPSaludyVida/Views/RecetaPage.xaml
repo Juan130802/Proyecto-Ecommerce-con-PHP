@@ -1,0 +1,91 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewsModel"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.RecetaPage"
+             Title="Receta Médica"
+             BackgroundColor="#F3EFE0">
+
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="PlaceholderColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <vm:RecetaViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="25">
+
+            <Image Source="logo.png" HorizontalOptions="Center" HeightRequest="100" />
+
+            <Label Text="Receta Médica"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#201E1F"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start" />
+
+            <Frame BackgroundColor="#087E8B" Padding="20" CornerRadius="10" HasShadow="True">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                      RowSpacing="20" ColumnSpacing="20">
+
+                    <Label Text="Nombre del Doctor" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="0" Grid.Column="0" />
+                    <Entry Text="{Binding NombreDoctor}" Placeholder="Ingrese el nombre del doctor" Grid.Row="0" Grid.Column="1" />
+
+                    <Label Text="Especialidad" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="1" Grid.Column="0" />
+                    <Entry Text="{Binding Especialidad}" Placeholder="Ingrese la especialidad" Grid.Row="1" Grid.Column="1" />
+
+                    <Label Text="Medicamento 1" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="2" Grid.Column="0" />
+                    <Entry Text="{Binding Medicamentos[0]}" Placeholder="Ingrese el nombre del medicamento" Grid.Row="2" Grid.Column="1" />
+
+                    <Label Text="Dosis 1" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="3" Grid.Column="0" />
+                    <Entry Text="{Binding Dosis[0]}" Placeholder="Ingrese la dosis" Grid.Row="3" Grid.Column="1" />
+
+                    <Label Text="Medicamento 2" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="4" Grid.Column="0" />
+                    <Entry Text="{Binding Medicamentos[1]}" Placeholder="Ingrese el nombre del medicamento" Grid.Row="4" Grid.Column="1" />
+
+                    <Label Text="Dosis 2" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="5" Grid.Column="0" />
+                    <Entry Text="{Binding Dosis[1]}" Placeholder="Ingrese la dosis" Grid.Row="5" Grid.Column="1" />
+
+                    <Label Text="Medicamento 3" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="6" Grid.Column="0" />
+                    <Entry Text="{Binding Medicamentos[2]}" Placeholder="Ingrese el nombre del medicamento" Grid.Row="6" Grid.Column="1" />
+
+                    <Label Text="Dosis 3" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="7" Grid.Column="0" />
+                    <Entry Text="{Binding Dosis[2]}" Placeholder="Ingrese la dosis" Grid.Row="7" Grid.Column="1" />
+
+                    <Label Text="Medicamento 4" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="8" Grid.Column="0" />
+                    <Entry Text="{Binding Medicamentos[3]}" Placeholder="Ingrese el nombre del medicamento" Grid.Row="8" Grid.Column="1" />
+
+                    <Label Text="Dosis 4" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="9" Grid.Column="0" />
+                    <Entry Text="{Binding Dosis[3]}" Placeholder="Ingrese la dosis" Grid.Row="9" Grid.Column="1" />
+
+                    <Label Text="Nombre del Paciente" FontAttributes="Bold" FontSize="16" TextColor="White" Grid.Row="10" Grid.Column="0" />
+                    <Entry Text="{Binding NombrePaciente}" Placeholder="Ingrese el nombre del paciente" Grid.Row="10" Grid.Column="1" />
+                </Grid>
+            </Frame>
+
+            <Button Text="Guardar Receta"
+                    Command="{Binding GuardarRecetaCommand}"
+                    BackgroundColor="#201E1F"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="8"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0,10,0,0" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

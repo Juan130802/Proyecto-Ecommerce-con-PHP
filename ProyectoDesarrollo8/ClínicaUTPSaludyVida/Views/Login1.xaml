@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewsModel"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.Login1"
+             Title="Login"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="Auto, *, Auto" Padding="0" BackgroundColor="#F5F5DC">
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Padding="0,-199,0,0">
+            <Image Source="logo.png" HeightRequest="200" HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Spacing="15" Padding="0,250,0,0" VerticalOptions="Center">
+            <Border Stroke="Black" StrokeThickness="2" StrokeShape="RoundRectangle 10" WidthRequest="335" HeightRequest="50" HorizontalOptions="Center" Margin="10,0">
+                <Entry Placeholder="Correo Electrónico"
+                       Text="{Binding Email}"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       TextColor="Black"
+                       FontFamily="Inter"
+                       FontSize="16"
+                       Keyboard="Email"
+                       HorizontalOptions="FillAndExpand"/>
+            </Border>
+
+            <Border Stroke="Black" StrokeThickness="2" StrokeShape="RoundRectangle 10" WidthRequest="335" HeightRequest="50" HorizontalOptions="Center" Margin="10,0">
+                <Entry Placeholder="Contraseña"
+                       Text="{Binding Password}"
+                       IsPassword="True"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       TextColor="Black"
+                       FontFamily="Inter"
+                       FontSize="16"
+                       HorizontalOptions="FillAndExpand"/>
+            </Border>
+
+            <Button Text="Iniciar Sesión"
+                    BackgroundColor="#087E8B"
+                    TextColor="White"
+                    FontFamily="Inter"
+                    HeightRequest="50"
+                    WidthRequest="335"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    Command="{Binding LoginCommand}"/>
+
+            <Button Text="Registrarte"
+                    BackgroundColor="#087E8B"
+                    TextColor="White"
+                    FontFamily="Inter"
+                    HeightRequest="50"
+                    WidthRequest="335"
+                    CornerRadius="10"
+                    HorizontalOptions="Center"
+                    Clicked="OnLoginButtonClicked"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

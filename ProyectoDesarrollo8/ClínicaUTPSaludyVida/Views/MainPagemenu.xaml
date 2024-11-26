@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewsModel"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.MainPagemenu"
+             BackgroundColor="#1FBFAF"
+             Title="Clínica Universitaria"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <local:MainPageMenuViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="5,0" Spacing="10" BackgroundColor="#F5F5F5">
+            <Button Text="☰"
+                Command="{Binding ToggleMenuCommand}"
+                BackgroundColor="#201E1F"
+                TextColor="#F3EFE0"
+                WidthRequest="50"
+                HeightRequest="50"
+                CornerRadius="25"
+                FontSize="24"
+                HorizontalOptions="Start"
+                VerticalOptions="Start" />
+
+            <Grid x:Name="MenuGrid" IsVisible="{Binding IsPatientMenuVisible}" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Page1Button"
+                    Text="Agende su cita"
+                    Grid.Row="0"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Agende su cita"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="Page2Button"
+                    Text="Ver Cita Agendada"
+                    Grid.Row="1"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Ver Cita Agendada"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button Text="Recetas Agendadas"
+                    Grid.Row="2"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Recetas Agendadas"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button Text="Historial Medico"
+                    Grid.Row="3"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Historial Medico"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="Page3Button"
+                    Text="Servicios Ofertados"
+                    Grid.Row="4"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Servicios Ofertados"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="Page4Button"
+                    Text="Nosotros"
+                    Grid.Row="5"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Nosotros"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="LogoutButton"
+                    Text="Cerrar Sesión"
+                    Grid.Row="6"
+                    Command="{Binding LogoutCommand}"
+                    BackgroundColor="#D9534F"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+            </Grid>
+
+            <Grid x:Name="DoctorMenuGrid" IsVisible="{Binding IsDoctorMenuVisible}" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+
+                </Grid.RowDefinitions>
+
+                <Button x:Name="RegisterPatientButton"
+                    Text="Registro de Citas"
+                    Grid.Row="0"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Registro de Citas"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="AppointmentsCalendarButton"
+                    Text="Calendario de Citas"
+                    Grid.Row="1"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Calendario de Citas"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="ReeferenciasButton"
+                    Text="Referencias Medicas"
+                    Grid.Row="2"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Referencias Medicas"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="ContactButton"
+                    Text="Contacto"
+                    Grid.Row="3"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Contacto"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="LogoutButtonDoctor"
+                    Text="Cerrar Sesión"
+                    Grid.Row="4"
+                    Command="{Binding LogoutCommand}"
+                    BackgroundColor="#D9534F"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="R"
+    Text="Registro"
+    Grid.Row="5"
+    Command="{Binding MenuOptionCommand}"
+    CommandParameter="Registro"
+    BackgroundColor="#087E8B"
+    TextColor="#F3EFE0"
+    CornerRadius="25"
+    Margin="0,0,0,10"
+    HorizontalOptions="FillAndExpand"
+    VerticalOptions="Center"/>
+
+            </Grid>
+
+            <Grid x:Name="LaboratoristaMenuGrid" IsVisible="{Binding IsLaboratoristaMenuVisible}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Donates"
+            Text="Examenes De Donantes"
+            Grid.Row="0"
+            Command="{Binding MenuOptionCommand}"
+            CommandParameter="ExamenesDeDonantes"
+            BackgroundColor="#087E8B"
+            TextColor="#F3EFE0"
+            CornerRadius="25"
+            Margin="0,0,0,10"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center"/>
+
+                    <Button x:Name="LogoutButtonLab"
+            Text="Cerrar Sesión"
+            Grid.Row="1"
+            Command="{Binding LogoutCommand}"
+            BackgroundColor="#D9534F"
+            TextColor="#F3EFE0"
+            CornerRadius="25"
+            Margin="0,0,0,10"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center"/>
+            </Grid>
+
+
+            <Grid x:Name="NurseMenuGrid" IsVisible="{Binding IsNurseMenuVisible}" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="ConsultaGeneralButton"
+                Text="Consulta General"
+                Grid.Row="0"
+                Command="{Binding MenuOptionCommand}"
+                CommandParameter="Consulta General"
+                BackgroundColor="#087E8B"
+                TextColor="#F3EFE0"
+                CornerRadius="25"
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+
+                <Button x:Name="UrgenciasButton"
+                Text="Urgencias Médicas"
+                Grid.Row="1"
+                Command="{Binding MenuOptionCommand}"
+                CommandParameter="Consulta Urgencias"
+                BackgroundColor="#087E8B"
+                TextColor="#F3EFE0"
+                CornerRadius="25"
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+
+                <Button x:Name="MedicamentosButton"
+                Text="Reporte Medicamentos y Tratamientos"
+                Grid.Row="2"
+                Command="{Binding MenuOptionCommand}"
+                CommandParameter="Medicamentos Tratamientos"
+                BackgroundColor="#087E8B"
+                TextColor="#F3EFE0"
+                CornerRadius="25"
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+
+                <Button x:Name="CertificadoButton"
+                Text="Certificados Medicamentos"
+                Grid.Row="3"
+                Command="{Binding MenuOptionCommand}"
+                CommandParameter="Certificados Medicos"
+                BackgroundColor="#087E8B"
+                TextColor="#F3EFE0"
+                CornerRadius="25"
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+
+                <Button x:Name="DonadoresButton"
+                Text="Donantes De Sangre"
+                Grid.Row="4"
+                Command="{Binding MenuOptionCommand}"
+                CommandParameter="Donantes De Sangre"
+                BackgroundColor="#087E8B"
+                TextColor="#F3EFE0"
+                CornerRadius="25"
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+
+                <Button x:Name="Donates1"
+                Text="Examenes De Donantes"
+                Grid.Row="5"
+                Command="{Binding MenuOptionCommand}"
+                CommandParameter="ExamenesDeDonantes"
+                BackgroundColor="#087E8B"
+                TextColor="#F3EFE0"
+                CornerRadius="25"
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+
+                <Button x:Name="Procedimiento"
+                Text="Procedimientos Medicos"
+                Grid.Row="6"
+                Command="{Binding MenuOptionCommand}"
+                CommandParameter="Procedimientos Medicos"
+                BackgroundColor="#087E8B"
+                TextColor="#F3EFE0"
+                CornerRadius="25"
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+
+                <Button x:Name="LogoutButtonNurse"
+                Text="Cerrar Sesión"
+                Grid.Row="7"
+                Command="{Binding LogoutCommand}"
+                BackgroundColor="#D9534F"
+                TextColor="#F3EFE0"
+                CornerRadius="25"
+                Margin="0,0,0,10"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Center"/>
+            </Grid>
+
+            <Grid x:Name="AdminMenuGrid" IsVisible="{Binding IsAdminMenuVisible}" Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="DoctoresButton"
+                    Text="Doctores"
+                    Grid.Row="0"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Doctores"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="PacientesButton"
+                    Text="Pacientes"
+                    Grid.Row="1"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Pacientes"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="PersonalMedicoButton"
+                    Text="Personal Médico"
+                    Grid.Row="2"
+                    Command="{Binding MenuOptionCommand}"
+                    CommandParameter="Personal Médico"
+                    BackgroundColor="#087E8B"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+
+                <Button x:Name="ProcedimientosM"
+    Text="Procedimientos Médico"
+    Grid.Row="3"
+    Command="{Binding MenuOptionCommand}"
+    CommandParameter="ProcedimientosMédico"
+    BackgroundColor="#087E8B"
+    TextColor="#F3EFE0"
+    CornerRadius="25"
+    Margin="0,0,0,10"
+    HorizontalOptions="FillAndExpand"
+    VerticalOptions="Center"/>
+
+                <Button x:Name="LogoutButtonAdmin"
+                    Text="Cerrar Sesión"
+                    Grid.Row="4"
+                    Command="{Binding LogoutCommand}"
+                    BackgroundColor="#D9534F"
+                    TextColor="#F3EFE0"
+                    CornerRadius="25"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"/>
+            </Grid>
+
+            <VerticalStackLayout Padding="30,0" Spacing="25" BackgroundColor="#F5F5F5">
+                <Image Source="logo.png" HeightRequest="185" Aspect="AspectFit" />
+
+                <Label Text="Bienvenido a la Clínica Universitaria"
+           FontSize="28"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"
+           TextColor="#006699" />
+
+                <Label Text="La Clínica Universitaria brinda servicios de salud y lleva a cabo actividades clínicas y de capacitación en temas de salud, dirigidas a la población estudiantil, docente, administrativa y de investigación de la Universidad."
+           FontSize="16"
+           LineBreakMode="WordWrap"
+           HorizontalOptions="Center"
+           TextColor="#333333" />
+
+                <Image Source="image2.jpg" HeightRequest="185" Aspect="AspectFit" />
+
+                <Label Text="Objetivos"
+           FontAttributes="Bold"
+           TextColor="#006699"
+           FontSize="24"
+           HorizontalOptions="Center"
+           VerticalOptions="Start" />
+
+                <Frame BackgroundColor="#FFFFFF"
+                    BorderColor="#006699"
+                    CornerRadius="15"
+           Padding="15"
+           HasShadow="True">
+                    <Label Text="Proporcionar al paciente servicios de atención integral para su salud, en lo concerniente a prevención, tratamiento y rehabilitación de enfermedades."
+               TextColor="#333333"
+               FontSize="16"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center" />
+                </Frame>
+
+                <Frame BackgroundColor="#FFFFFF"
+           BorderColor="#006699"
+           CornerRadius="15"
+           Padding="15"
+           HasShadow="True">
+                    <Label Text="Desarrollar actividades inherentes a la promoción de la salud de la comunidad universitaria."
+               TextColor="#333333"
+               FontSize="16"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center" />
+                </Frame>
+
+                <Frame BackgroundColor="#FFFFFF"
+           BorderColor="#006699"
+           CornerRadius="15"
+           Padding="15"
+           HasShadow="True">
+                    <Label Text="Brindar a los pacientes y usuarios de la comunidad universitaria acceso rápido a sus historiales médicos, resultados de exámenes y citas, promoviendo un manejo más eficiente y seguro de su salud."
+               TextColor="#333333"
+               FontSize="16"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center" />
+                </Frame>
+
+                <Frame BackgroundColor="#FFFFFF"
+           BorderColor="#006699"
+           CornerRadius="15"
+           Padding="15"
+           HasShadow="True">
+                    <Label Text="Fomentar una interacción fluida entre pacientes y profesionales de la salud mediante herramientas como consultas virtuales, recordatorios de citas y la posibilidad de enviar y recibir mensajes relacionados con el tratamiento."
+               TextColor="#333333"
+               FontSize="16"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center" />
+                </Frame>
+
+                <Label Text="Funciones"
+           FontAttributes="Bold"
+           TextColor="#006699"
+           FontSize="24"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"
+           Margin="0,40,0,0" />
+
+                <Frame BackgroundColor="#FFFFFF"
+           BorderColor="#006699"
+           CornerRadius="15"
+           Padding="15"
+           HasShadow="True">
+                    <Label Text="Asistir con atención médica a los estudiantes, docentes, investigadores y personal administrativo de la Universidad."
+               TextColor="#333333"
+               FontSize="16"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center" />
+                </Frame>
+
+                <Frame BackgroundColor="#FFFFFF"
+           BorderColor="#006699"
+           CornerRadius="15"
+           Padding="15"
+           HasShadow="True">
+                    <Label Text="Orientar a pacientes acerca de su enfermedad, tratamiento, medicamento y efectos secundarios."
+               TextColor="#333333"
+               FontSize="16"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center" />
+                </Frame>
+
+                <Frame BackgroundColor="#FFFFFF"
+           BorderColor="#006699"
+           CornerRadius="15"
+           Padding="15"
+           HasShadow="True">
+                    <Label Text="Dar atención primaria (promoción y prevención), atención secundaria (diagnóstico y tratamiento) y atención terciaria (rehabilitación)."
+               TextColor="#333333"
+               FontSize="16"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center" />
+                </Frame>
+
+                <VerticalStackLayout Padding="30,20" BackgroundColor="#087E8B" VerticalOptions="EndAndExpand">
+                    <Label Text="© 2024 Clínica Universitaria"
+               FontSize="14"
+               TextColor="White"
+               HorizontalOptions="Center" />
+                    <Label Text="Contáctenos: +507 6254-2854 | clinica.universitaria@utp.ac.pa"
+               HorizontalOptions="Center"
+               TextColor="White"
+               FontSize="16" />
+                    <Label Text="Síguenos en nuestras redes sociales"
+               HorizontalOptions="Center"
+               TextColor="White"
+               FontSize="16" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                        <Image Source="whatsapp.png" WidthRequest="40" HeightRequest="40"/>
+                        <Image Source="instagram.png" WidthRequest="40" HeightRequest="40"/>
+                    </StackLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

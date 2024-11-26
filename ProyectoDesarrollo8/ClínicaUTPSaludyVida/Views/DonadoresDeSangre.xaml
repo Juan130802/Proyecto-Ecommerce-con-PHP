@@ -1,0 +1,133 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.DonadoresDeSangre"
+             Title="Requisitos y Buenos Hábitos para Donar Sangre"
+             BackgroundColor="#F3EFE0">
+
+    <ScrollView>
+        <StackLayout Padding="25" Spacing="20">
+
+            <!-- Título Principal -->
+            <Label Text="Requisitos para Ser Donante de Sangre"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   TextColor="#201E1F"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,0" />
+
+            <!-- Separador decorativo -->
+            <BoxView HeightRequest="3" BackgroundColor="#087E8B" Margin="0,5,0,20"/>
+
+            <!-- Requisitos Section -->
+            <Frame BackgroundColor="#ffffff"
+                   CornerRadius="12"
+                   Padding="15"
+                   HasShadow="True">
+                <StackLayout>
+                    <Label Text="1. Edad: Tener entre 18 y 65 años." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="2. Peso: Pesar más de 50 kg (110 lbs)." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="3. Salud General: Gozar de buena salud." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="4. Hemoglobina: Tener niveles adecuados de hemoglobina." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="5. Frecuencia de Donación: Esperar al menos 8 semanas entre donaciones." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="6. Estilo de Vida Saludable: No consumir drogas ni alcohol en exceso." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="7. Viajes Recientes: No haber viajado a zonas de alto riesgo." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="8. Vacunas y Procedimientos Recientes: Esperar el tiempo recomendado." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="9. Ayuno: No estar en ayunas al momento de donar." FontSize="Medium" TextColor="#201E1F" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Buenos Hábitos Section -->
+            <Label Text="Buenos Hábitos para Ser Donante de Sangre"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   TextColor="#201E1F"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,10" />
+
+            <BoxView HeightRequest="3" BackgroundColor="#087E8B" Margin="0,5,0,20"/>
+
+            <Frame BackgroundColor="#ffffff"
+                   CornerRadius="12"
+                   Padding="15"
+                   HasShadow="True">
+                <StackLayout>
+                    <Label Text="1. Alimentación Equilibrada: Consumir una dieta rica en hierro y vitamina C." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="2. Hidratación: Beber abundante agua antes y después de la donación." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="3. Descanso: Dormir bien la noche anterior a la donación." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="4. Evitar Alcohol y Tabaco: Limitar el consumo de alcohol y evitar fumar antes y después de donar." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="5. Ejercicio: Practicar ejercicio regularmente, pero evitar actividades intensas el día de la donación." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="6. Cuidado General de la Salud: Realizar chequeos médicos periódicos." FontSize="Medium" TextColor="#201E1F" />
+                    <Label Text="7. Evitar Automedicarse: Evitar tomar medicamentos sin receta, especialmente anticoagulantes." FontSize="Medium" TextColor="#201E1F" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Título adicional -->
+            <Label Text="¿Deseas ser Donante de Sangre?"
+                   FontSize="Title"
+                   FontAttributes="Bold"
+                   TextColor="#201E1F"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,10" />
+
+            <!-- Botones de Sí y No -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Sí"
+                        BackgroundColor="#087E8B"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Clicked="OnButtonClicked"
+                        WidthRequest="100"
+                        CornerRadius="8"
+                        Margin="10,0"/>
+                <Button Text="No"
+                        BackgroundColor="#201E1F"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        WidthRequest="100"
+                        CornerRadius="8"
+                        Margin="10,0"
+                        Clicked="OnButtonClicked1"/>
+            </StackLayout>
+
+            <StackLayout x:Name="FormularioDonante" IsVisible="False" Padding="10" Margin="0,10,0,0">
+                <Frame BackgroundColor="#ffffff" CornerRadius="8" Padding="8" HasShadow="False">
+                    <StackLayout Spacing="10">
+                        <Label Text="Formulario para Donante"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="#201E1F"
+                   HorizontalOptions="Center" />
+
+                        <Label Text="Nombre" FontSize="Medium" TextColor="#201E1F" />
+                        <Frame CornerRadius="5" BorderColor="#D3D3D3" Padding="5">
+                            <Entry Placeholder="Ingresa tu nombre" 
+                       BackgroundColor="White" 
+                       TextColor="#201E1F" 
+                       Text="{Binding Nombre}" />
+                            <!-- Enlazar el nombre -->
+                        </Frame>
+
+                        <Label Text="Cédula" FontSize="Medium" TextColor="#201E1F" />
+                        <Frame CornerRadius="5" BorderColor="#D3D3D3" Padding="5">
+                            <Entry Placeholder="Ingresa tu cédula" 
+                       Keyboard="Numeric" 
+                       BackgroundColor="White" 
+                       TextColor="#201E1F" 
+                       Text="{Binding Cedula}" />
+                        </Frame>
+
+                        <Button Text="Realizar Examen" 
+                    BackgroundColor="#087E8B"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="8"
+                    Margin="0,15,0,0"
+                    Command="{Binding RealizarExamenCommand}" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

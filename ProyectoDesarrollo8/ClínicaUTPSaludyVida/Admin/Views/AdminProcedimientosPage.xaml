@@ -1,0 +1,52 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Clínica_UTP_Salud_y_Vida.Admin.Views.AdminProcedimientosPage"
+             BackgroundColor="#F3EFE0">
+
+    <StackLayout Padding="20">
+        <!-- Título -->
+        <Label Text="Procedimientos Médicos"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#201E1F"
+               Margin="0,0,0,20"/>
+
+            <Button Text="Cargar Procedimientos"
+                Command="{Binding CargarProcedimientosCommand}"
+                BackgroundColor="#087E8B"
+                TextColor="White"
+                CornerRadius="5"
+                FontSize="Medium"
+                Padding="10"/>
+
+        <ListView ItemsSource="{Binding Procedimientos}"
+                  SeparatorColor="#201E1F"
+                  Margin="0,20,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" BackgroundColor="#F3EFE0">
+                            <Label Text="{Binding TipoProcedimiento}"
+                                   FontSize="Medium"
+                                   TextColor="#201E1F"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Fecha}"
+                                   FontSize="Small"
+                                   TextColor="#087E8B"/>
+                            <Label Text="{Binding NombrePaciente}"
+                                   FontSize="Small"
+                                   TextColor="#201E1F"/>
+                            <Label Text="{Binding CedulaPaciente}"
+                                   FontSize="Small"
+                                   TextColor="#201E1F"/>
+                            <Label Text="{Binding Observaciones}"
+                                   FontSize="Small"
+                                   TextColor="#201E1F"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

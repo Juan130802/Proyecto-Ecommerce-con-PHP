@@ -1,0 +1,42 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewModels"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.ReferenciasListPage"
+             Title="Lista de Referencias"
+             BackgroundColor="#F3EFE0">
+
+    <ContentPage.BindingContext>
+        <vm:ReferenciasListViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Button Text="Cargar Referencias" 
+                    Command="{Binding CargarReferenciasCommand}"
+                    BackgroundColor="#087E8B"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Margin="0,10,0,10" />
+
+            <ListView ItemsSource="{Binding Referencias}" 
+                      BackgroundColor="#FFFFFF"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="10" Margin="5" BorderColor="#087E8B" CornerRadius="10" BackgroundColor="#F3EFE0">
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Name}" FontSize="18" TextColor="#087E8B" />
+                                    <Label Text="{Binding Cedula}" FontSize="16" TextColor="#201E1F" />
+                                    <Label Text="{Binding Contacto}" FontSize="16" TextColor="#201E1F" />
+                                    <Label Text="{Binding Motivo}" FontSize="16" TextColor="#201E1F" />
+                                    <Label Text="{Binding especialidadmedica}" FontSize="16" TextColor="#201E1F" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

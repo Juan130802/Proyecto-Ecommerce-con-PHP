@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Clínica_UTP_Salud_y_Vida.ViewsModel"
+             x:Class="Clínica_UTP_Salud_y_Vida.Views.LaboratoristaRegister"
+             Title="Registro de Laboratorista"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.BindingContext>
+        <vm:LaboratoristaViewModel />
+    </ContentPage.BindingContext>
+    <Grid RowDefinitions="Auto, *, Auto" Padding="0" BackgroundColor="#F5F5DC">
+        <BoxView Grid.Row="0" HeightRequest="68" BackgroundColor="#087E8B"/>
+        <BoxView Grid.Row="0" HeightRequest="28" BackgroundColor="#201E1F"/>
+
+        <AbsoluteLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image Source="logo.png" HeightRequest="210"
+                   AbsoluteLayout.LayoutBounds="0.5, 0.1, AutoSize, AutoSize"
+                   AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        </AbsoluteLayout>
+
+        <VerticalStackLayout Grid.Row="1" Spacing="15" Padding="0,90,0,0" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+            <Entry Placeholder="Nombre Completo"
+                   Text="{Binding Name}"
+                   PlaceholderColor="Black"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   HeightRequest="50"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <Entry Placeholder="Cédula"
+                   Text="{Binding Cedula}"
+                   PlaceholderColor="Black"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   HeightRequest="50"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <Entry Placeholder="Correo Electrónico"
+                   Text="{Binding Email}"
+                   PlaceholderColor="Black"
+                   BackgroundColor="White"
+                   TextColor="Black"
+                   Keyboard="Email"
+                   HeightRequest="50"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <Entry Placeholder="Contraseña"
+                   Text="{Binding Password}"
+                   PlaceholderColor="Black"
+                   BackgroundColor="White"
+                   IsPassword="True"
+                   TextColor="Black"
+                   HeightRequest="50"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <HorizontalStackLayout Padding="0,0,0,0" Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+                <Button Text="Iniciar Sesión"
+                        BackgroundColor="#087E8B"
+                        TextColor="White"
+                        FontFamily="Inter"
+                        HeightRequest="50"
+                        WidthRequest="150"
+                        Command="{Binding LoginCommand}"/>
+
+                <Button Text="Registrar"
+                        BackgroundColor="#087E8B"
+                        TextColor="White"
+                        FontFamily="Inter"
+                        HeightRequest="50"
+                        WidthRequest="150"
+                        Command="{Binding SaveCommand}"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <BoxView Grid.Row="2" HeightRequest="68" BackgroundColor="#201E1F"/>
+        <BoxView Grid.Row="2" HeightRequest="28" BackgroundColor="#087E8B"/>
+    </Grid>
+</ContentPage>
