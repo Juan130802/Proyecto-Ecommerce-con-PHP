@@ -16,7 +16,8 @@ if (!isset($_SESSION['cart'])) {
     }
 }
 
-function updateCartCookie($userId) {
+function updateCartCookie($userId)
+{
     global $cartCookieName;
     setcookie($cartCookieName, json_encode($_SESSION['cart']), time() + (86400 * 30), "/"); // Validez de 30 días
 }
@@ -83,16 +84,46 @@ function calculateTotal()
 }
 
 $totals = calculateTotal();
+
+function loadCountries($filePath)
+{
+    if (!file_exists($filePath)) {
+        die("El archivo XML no existe: $filePath");
+    }
+
+    $xmlContent = file_get_contents($filePath);
+    if ($xmlContent === false) {
+        die("No se pudo leer el archivo XML.");
+    }
+
+    // Usamos DOMDocument en lugar de simplexml
+    $dom = new DOMDocument();
+    libxml_use_internal_errors(true);  // Habilitar manejo de errores
+    if (!$dom->loadXML($xmlContent)) {
+        die("El contenido del archivo no es un XML válido.");
+    }
+
+    // Retornamos el documento DOM
+    return $dom;
+}
+
+$xmlFilePath = "Backend/paises.xml";
+$paisesXML = loadCountries($xmlFilePath);
+
 ?>
-
-
 
 <?php include 'components/header.php'; ?>
 <?php include 'components/navbar.php'; ?>
 
 <div class="min-h-screen bg-gray-50 py-12">
     <div class="container mx-auto px-4">
-        <h1 class="text-3xl font-bold mb-8">Carrito de Compras</h1>
+        <!-- Encabezado con botón "Ver Mis Pedidos" -->
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold">Carrito de Compras</h1>
+            <a href="ver_pedidos.php" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-lg">
+                Ver Mis Pedidos
+            </a>
+        </div>
 
         <div class="flex flex-col lg:flex-row gap-8">
             <div class="flex-grow">
@@ -106,9 +137,8 @@ $totals = calculateTotal();
                         <?php foreach ($_SESSION['cart'] as $id => $item): ?>
                             <div class="py-4 border-b">
                                 <div class="flex items-center gap-4">
-                                    <img src="<?php echo $item['image']; ?>" 
-                                         alt="<?php echo $item['name']; ?>" 
-                                         class="w-24 h-24 object-cover rounded-lg">
+                                    <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['name']; ?>"
+                                        class="w-24 h-24 object-cover rounded-lg">
                                     <div class="flex-grow">
                                         <h3 class="text-lg font-semibold"><?php echo $item['name']; ?></h3>
                                         <div class="flex items-center gap-4 mt-2">
@@ -116,9 +146,13 @@ $totals = calculateTotal();
                                                 <input type="hidden" name="action" value="update">
                                                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                                                 <div class="flex items-center border rounded-lg">
-                                                    <button type="submit" name="quantity" value="<?php echo $item['quantity'] - 1; ?>" class="px-3 py-1 hover:bg-gray-100 text-gray-600">-</button>
+                                                    <button type="submit" name="quantity"
+                                                        value="<?php echo $item['quantity'] - 1; ?>"
+                                                        class="px-3 py-1 hover:bg-gray-100 text-gray-600">-</button>
                                                     <span class="px-3 py-1 border-x"><?php echo $item['quantity']; ?></span>
-                                                    <button type="submit" name="quantity" value="<?php echo $item['quantity'] + 1; ?>" class="px-3 py-1 hover:bg-gray-100 text-gray-600">+</button>
+                                                    <button type="submit" name="quantity"
+                                                        value="<?php echo $item['quantity'] + 1; ?>"
+                                                        class="px-3 py-1 hover:bg-gray-100 text-gray-600">+</button>
                                                 </div>
                                             </form>
                                             <form method="POST">
@@ -131,8 +165,10 @@ $totals = calculateTotal();
                                         </div>
                                     </div>
                                     <div class="text-right">
-                                        <p class="text-lg font-bold text-indigo-600">$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></p>
-                                        <p class="text-sm text-gray-500">$<?php echo number_format($item['price'], 2); ?> cada uno</p>
+                                        <p class="text-lg font-bold text-indigo-600">
+                                            $<?php echo number_format($item['price'] * $item['quantity'], 2); ?></p>
+                                        <p class="text-sm text-gray-500">$<?php echo number_format($item['price'], 2); ?> cada
+                                            uno</p>
                                     </div>
                                 </div>
                             </div>
@@ -154,6 +190,7 @@ $totals = calculateTotal();
             <div class="lg:w-96">
                 <div class="bg-white rounded-lg shadow-md p-6">
                     <h2 class="text-xl font-semibold mb-4">Resumen del Pedido</h2>
+
                     <div class="space-y-3 text-gray-600">
                         <div class="flex justify-between">
                             <span>Subtotal</span>
@@ -170,12 +207,26 @@ $totals = calculateTotal();
                             <span class="text-indigo-600">$<?php echo number_format($totals['total'], 2); ?></span>
                         </div>
                     </div>
-                    <form method="POST" action="Backend/procesar_pedido.php">
-                        <input type="hidden" name="total" value="<?php echo $totals['total']; ?>">
-                        <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">Hacer Pedido</button>
-                    </form>
                 </div>
             </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 mt-8">
+            <form method="POST" id="pedidoForm" action="Backend/procesar_pedido.php">
+                <label for="pais" class="block text-gray-600 mb-2">Selecciona el país de entrega:</label>
+                <select id="pais" name="pais" class="w-full border rounded-lg px-3 py-2" required>
+                    <option value="">-- Selecciona un país --</option>
+                    <?php
+                    $paises = $paisesXML->getElementsByTagName('Nombre');
+                    foreach ($paises as $pais) {
+                        echo '<option value="' . $pais->nodeValue . '">' . $pais->nodeValue . '</option>';
+                    }
+                    ?>
+                </select>
+                <input type="hidden" name="total" value="<?php echo $totals['total']; ?>">
+                <button type="submit"
+                    class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 mt-4">Hacer Pedido</button>
+            </form>
         </div>
     </div>
 </div>

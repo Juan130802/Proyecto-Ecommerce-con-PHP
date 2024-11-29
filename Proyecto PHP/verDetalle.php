@@ -10,13 +10,14 @@ if (!isset($_GET['id'])) {
     die("Pedido no especificado.");
 }
 
-$idPedido = (int)$_GET['id'];
+$idPedido = (int) $_GET['id'];
 $mysqli = conectarDB();
 
-// Consulta para obtener los detalles del pedido
-$queryDetalle = "SELECT dp.cantidad, dp.precioUnitario, dp.subtotal 
-                 FROM detallepedidos dp
-                 WHERE dp.idPedido = ?";
+$queryDetalle = "
+    SELECT dp.cantidad, dp.precioUnitario, dp.subtotal, p.pais
+    FROM detallepedidos dp
+    INNER JOIN pedidos p ON dp.idPedido = p.idPedido
+    WHERE dp.idPedido = ?";
 $stmtDetalle = $mysqli->prepare($queryDetalle);
 $stmtDetalle->bind_param("i", $idPedido);
 $stmtDetalle->execute();
@@ -28,7 +29,16 @@ $resultDetalle = $stmtDetalle->get_result();
 
 <div class="min-h-screen bg-gray-50 py-12">
     <div class="container mx-auto px-4">
-        <h1 class="text-3xl font-bold mb-8">Detalle del Pedido</h1>
+        <!-- Encabezado con botón de Volver -->
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold">Detalle del Pedido</h1>
+            <a href="javascript:history.back()"
+                class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg text-lg">
+                Volver
+            </a>
+        </div>
+
+        <!-- Tabla de detalles -->
         <?php if ($resultDetalle->num_rows > 0): ?>
             <div class="bg-white rounded-lg shadow-md p-6">
                 <table class="w-full border-collapse border">
@@ -37,6 +47,7 @@ $resultDetalle = $stmtDetalle->get_result();
                             <th class="border p-2">Cantidad</th>
                             <th class="border p-2">Precio Unitario</th>
                             <th class="border p-2">Subtotal</th>
+                            <th class="border p-2">País</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +56,7 @@ $resultDetalle = $stmtDetalle->get_result();
                                 <td class="border p-2"><?php echo $detalle['cantidad']; ?></td>
                                 <td class="border p-2">$<?php echo number_format($detalle['precioUnitario'], 2); ?></td>
                                 <td class="border p-2">$<?php echo number_format($detalle['subtotal'], 2); ?></td>
+                                <td class="border p-2"><?php echo htmlspecialchars($detalle['pais']); ?></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>

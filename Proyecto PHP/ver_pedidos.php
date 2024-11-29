@@ -11,7 +11,7 @@ $mysqli = conectarDB();
 
 // Número de pedidos por página
 $limite = 10;
-$pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+$pagina = isset($_GET['pagina']) ? (int) $_GET['pagina'] : 1;
 $inicio = ($pagina - 1) * $limite;
 
 // Obtener los pedidos del usuario con paginación
@@ -30,14 +30,19 @@ $totalPedidos = $stmtCount->get_result()->fetch_assoc()['total'];
 $totalPaginas = ceil($totalPedidos / $limite);
 
 // Función para traducir estados
-function traducirEstado($estado) {
+function traducirEstado($estado)
+{
     $estados = [
         'pendiente' => 'Pendiente de Confirmación',
-        'procesado' => 'En Proceso',
+        'confirmado' => 'Confirmado',
         'entregado' => 'Entregado',
+        'no confirmado' => 'No Confirmado',
+        'no entregado' => 'No Entregado',
+        'procesado' => 'En Proceso',
     ];
     return $estados[$estado] ?? 'Desconocido';
 }
+
 ?>
 
 <?php include 'components/header.php'; ?>
@@ -45,7 +50,13 @@ function traducirEstado($estado) {
 
 <div class="min-h-screen bg-gray-50 py-12">
     <div class="container mx-auto px-4">
-        <h1 class="text-3xl font-bold mb-8">Mis Pedidos</h1>
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold">Mis Pedidos</h1>
+            <a href="javascript:history.back()"
+                class="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg text-lg">
+                Volver
+            </a>
+        </div>
         <?php if ($resultPedidos->num_rows > 0): ?>
             <div class="bg-white rounded-lg shadow-md p-6">
                 <table class="w-full border-collapse border">
@@ -66,7 +77,8 @@ function traducirEstado($estado) {
                                 <td class="border p-2">$<?php echo number_format($pedido['total'], 2); ?></td>
                                 <td class="border p-2"><?php echo traducirEstado($pedido['estado']); ?></td>
                                 <td class="border p-2">
-                                    <a href="verDetalle.php?id=<?php echo $pedido['idPedido']; ?>" class="text-blue-500 hover:underline">Ver Detalle</a>
+                                    <a href="verDetalle.php?id=<?php echo $pedido['idPedido']; ?>"
+                                        class="text-blue-500 hover:underline">Ver Detalle</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -77,7 +89,8 @@ function traducirEstado($estado) {
             <!-- Paginación -->
             <div class="mt-6 flex justify-center">
                 <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
-                    <a href="?pagina=<?php echo $i; ?>" class="px-3 py-1 mx-1 border <?php echo $i == $pagina ? 'bg-blue-500 text-white' : 'bg-gray-200'; ?>">
+                    <a href="?pagina=<?php echo $i; ?>"
+                        class="px-3 py-1 mx-1 border <?php echo $i == $pagina ? 'bg-blue-500 text-white' : 'bg-gray-200'; ?>">
                         <?php echo $i; ?>
                     </a>
                 <?php endfor; ?>

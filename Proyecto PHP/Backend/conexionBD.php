@@ -4,10 +4,12 @@ function conectarDB() {
     $database = 'sistemacatalogo';
     $user = 'juanq13';
     $password = 'Comprometido13#';
-    $ssl_ca = 'D:\\HP\\Nueva carpeta (2)\\DigiCertGlobalRootCA.crt.pem';
+    $ssl_ca = 'D:\\HP\\Nueva carpeta (2)\\DigiCertGlobalRootCA.crt.pem'; 
 
     $mysqli = mysqli_init();
-    $mysqli->ssl_set(NULL, NULL, $ssl_ca, NULL, NULL);
+    if (!$mysqli->ssl_set(NULL, NULL, $ssl_ca, NULL, NULL)) {
+        die('Error al configurar SSL: ' . mysqli_error($mysqli));
+    }
 
     if (!$mysqli->real_connect($host, $user, $password, $database, 3306)) {
         die('Error de conexión: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
@@ -15,6 +17,7 @@ function conectarDB() {
 
     return $mysqli;
 }
+
 
 function insertarUsuario($nombre, $apellido, $correo, $contrasena, $tipoUsuario, $telefono, $direccion) {
     $mysqli = conectarDB();

@@ -45,7 +45,6 @@ if ($resultCheck->num_rows > 0) {
 }
 $stmtCheck->close();
 
-// Actualizar el estado a 'inactivo'
 $sqlUpdate = "UPDATE usuarios SET estado = 'inactivo' WHERE idUsuario = ?";
 $stmtUpdate = $mysqli->prepare($sqlUpdate);
 
